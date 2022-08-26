@@ -1,12 +1,9 @@
-import defaultImg from '../images/harry-placeholder.jpg';
+
+import CharacterCard from './CharacterCard';
 
 function CharacterList (props) {
     const htmlCharacters = props.characters.map((character) => {
-        return (<li className="characters__item" id="">
-        <img className="characters__img" alt={`Foto de ${character.name}`} src={character.image || defaultImg} />
-        <h2 className="characters__name">{character.name}</h2>
-        <p className="characters__species">{character.species}</p>
-</li>)
+        return <CharacterCard character={character}/>
 
     })
 
