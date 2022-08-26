@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import getDataApi from '../services/hpApi';
 import CharacterList from './CharacterList';
+import Filters from './Filters';
 import Logo from '../images/logo.png';
 import '../styles/App.scss';
 
@@ -8,6 +9,7 @@ function App() {
 
   //Variables estado
   const [characters, setCharacters] = useState([])
+  const [searchName, setSearchName] = useState('');
 
   //Servicios
   useEffect(() => {
@@ -17,13 +19,25 @@ function App() {
     });
 }, []);
 
+  //Funciones de eventos
+  const handleFilterName = (inputName) => {
+    setSearchName(inputName);
+  }
+
+  //Filtrado
+  const filteredCharacters = characters
+  .filter((character) => {
+    return character.name.toLowerCase().includes(searchName.toLowerCase())
+  })
+
   return (
     <div>
       <header className='header'>
       <img className='header__logo' src={Logo} />
-      <h1>¡Bienvenido, muggle!</h1>
+      
       </header>
-      <CharacterList characters={characters}/>
+      <Filters handleFilterName={handleFilterName} searchName={searchName} />
+      <CharacterList filteredCharacters={filteredCharacters}/>
     </div>
   );
 }

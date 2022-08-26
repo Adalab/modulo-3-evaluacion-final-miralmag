@@ -1,5 +1,5 @@
 body{
-background-color: grey;
+background-color: rgba(221, 190, 239, 0.849);
 }
 
 .header{
@@ -7,23 +7,39 @@ background-color: grey;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    background-image: url('../images/header-bg.png'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+    &__title{
+        font-size: 30px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color:rgba(46, 4, 71, 0.849)
+    }
+
     &__logo{
     width: 400px;
 
 }
 }
-
+.form{
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
 .characters{
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
     &__item{
+       
 
     }
 
     &__img{
-        width: 200px;
+        max-width: 160px;
+        max-height: 200px;
     }
 }

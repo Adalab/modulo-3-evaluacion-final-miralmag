@@ -2,7 +2,7 @@
 import CharacterCard from './CharacterCard';
 
 function CharacterList (props) {
-    const htmlCharacters = props.characters.map((character) => {
+    const htmlCharacters = props.filteredCharacters.map((character) => {
         return <CharacterCard character={character}/>
 
     })
