@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import getDataApi from '../services/hpApi';
 import CharacterList from './CharacterList';
+import Logo from '../images/logo.png';
 import '../styles/App.scss';
 
 function App() {
@@ -18,7 +19,10 @@ function App() {
 
   return (
     <div>
+      <header className='header'>
+      <img className='header__logo' src={Logo} />
       <h1>¡Bienvenido, muggle!</h1>
+      </header>
       <CharacterList characters={characters}/>
     </div>
   );
