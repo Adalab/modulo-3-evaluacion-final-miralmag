@@ -10,6 +10,7 @@ function App() {
   //Variables estado
   const [characters, setCharacters] = useState([])
   const [searchName, setSearchName] = useState('');
+  const [searchHouse, setSearchHouse] = useState('gryffindor');
 
   //Servicios
   useEffect(() => {
@@ -17,11 +18,15 @@ function App() {
       setCharacters(data);
       console.log(characters);
     });
-}, []);
+  }, []);
 
   //Funciones de eventos
   const handleFilterName = (inputName) => {
     setSearchName(inputName);
+  }
+
+  const handleFilterHouse = (inputHouse) => {
+    setSearchHouse(inputHouse);
   }
 
   //Filtrado
@@ -34,9 +39,10 @@ function App() {
     <div>
       <header className='header'>
       <img className='header__logo' src={Logo} />
-      
       </header>
-      <Filters handleFilterName={handleFilterName} searchName={searchName} />
+
+      <Filters handleFilterName={handleFilterName} searchName={searchName} handleFilterHouse={handleFilterHouse} searchHouse={searchHouse}/>
+
       <CharacterList filteredCharacters={filteredCharacters}/>
     </div>
   );

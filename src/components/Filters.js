@@ -6,6 +6,10 @@ function Filters (props) {
         props.handleFilterName(ev.target.value);
     }
 
+    const handleFilterHouse = (ev) => {
+        props.handleFilterHouse(ev.target.value);
+    }
+
     return (
         <form className="form">
             <>
@@ -17,7 +21,9 @@ function Filters (props) {
             <select
                 className= "form__input-text"
                 name=" house" 
-                id="house">
+                id="house"
+                value={props.searchHouse}
+                onChange={handleFilterHouse}>
         
                     <option value= "gryffindor" selected>Gryffindor</option>
                     <option value="hufflepuff">Hufflepuff</option>
