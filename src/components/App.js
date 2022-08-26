@@ -10,7 +10,7 @@ function App() {
   //Variables estado
   const [characters, setCharacters] = useState([])
   const [searchName, setSearchName] = useState('');
-  const [searchHouse, setSearchHouse] = useState('gryffindor');
+  const [searchHouse, setSearchHouse] = useState('Gryffindor');
 
   //Servicios
   useEffect(() => {
@@ -33,6 +33,9 @@ function App() {
   const filteredCharacters = characters
   .filter((character) => {
     return character.name.toLowerCase().includes(searchName.toLowerCase())
+  })
+  .filter((character) => {
+    return searchHouse === character.house;
   })
 
   return (

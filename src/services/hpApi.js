@@ -1,6 +1,6 @@
 function getDataApi() {
     return fetch(
-        'http://hp-api.herokuapp.com/api/characters/house/gryffindor'
+        'http://hp-api.herokuapp.com/api/characters'
     )
         .then((response) => response.json())
         .then((data) => {

@@ -25,10 +25,10 @@ function Filters (props) {
                 value={props.searchHouse}
                 onChange={handleFilterHouse}>
         
-                    <option value= "gryffindor" selected>Gryffindor</option>
-                    <option value="hufflepuff">Hufflepuff</option>
-                    <option value="ravenclaw">Ravenclaw</option>
-                    <option value="slytherin">Slytherin</option>
+                    <option value= "Gryffindor" selected>Gryffindor</option>
+                    <option value="Hufflepuff">Hufflepuff</option>
+                    <option value="Ravenclaw">Ravenclaw</option>
+                    <option value="Slytherin">Slytherin</option>
             </select>
         </form>
     );
