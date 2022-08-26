@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import getDataApi from '../services/hpApi';
+import CharacterList from './CharacterList';
 import '../styles/App.scss';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   return (
     <div>
       <h1>¡Bienvenido, muggle!</h1>
+      <CharacterList characters={characters}/>
     </div>
   );
 }
