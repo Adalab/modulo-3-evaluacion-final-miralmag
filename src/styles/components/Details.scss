@@ -1,0 +1,16 @@
+.details{
+    list-style: none;
+    color: white;
+    background-color: rgba(46, 4, 71, 0.849);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__list{
+        list-style: none; 
+    }
+
+    &__photo{
+        max-height: 300px;
+    }
+}
