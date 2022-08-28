@@ -1,4 +1,4 @@
-
+import '../styles/components/Filters.scss';
 
 function Filters (props) {
 
@@ -16,14 +16,14 @@ function Filters (props) {
 
     return (
         <form className="form" onSubmit={handleForm}>
-            <>
-        <label className="form__label display-block" htmlFor="name">Busca por nombre:</label>
-        <input className="form__input-text" type="text" name="name" id="name" value={props.searchName} onChange={handleFilterName}></input>
-        </>
-
-        <label className="form__label display-block" htmlFor= "house">Busca por casa:</label>
+            <section className='form__wrapper'>
+        <label className="form__label" htmlFor="name">Busca por nombre:</label>
+        <input className="form__input" type="text" name="name" id="name" value={props.searchName} onChange={handleFilterName}></input>
+        </section>
+        <section className='form__wrapper'>
+        <label className="form__label" htmlFor= "house">Busca por casa:</label>
             <select
-                className= "form__input-text"
+                className= "form__input"
                 name=" house" 
                 id="house"
                 value={props.searchHouse}
@@ -34,6 +34,7 @@ function Filters (props) {
                     <option value="Ravenclaw">Ravenclaw</option>
                     <option value="Slytherin">Slytherin</option>
             </select>
+            </section>
         </form>
     );
 };

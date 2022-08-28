@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import defaultImg from '../images/harry-placeholder.jpg';
 
 function CharacterCard (props) {
+
     return (
     <li className="characters__item" >
         <Link to={`/character/${props.character.id}`}>

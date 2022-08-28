@@ -1,7 +1,9 @@
 @import 'core/reset';
 
 body{
-background-color: rgba(221, 190, 239, 0.849);
+background-image: url('../images/bg-medium.jpg');
+background-repeat: no-repeat;
+background-size: cover;
 }
 
 a{
@@ -13,28 +15,14 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('../images/header-bg.png'); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-   
-    &__title{
-        font-size: 30px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        color:rgba(46, 4, 71, 0.849)
-    }
 
     &__logo{
+    padding-top: 30px;
     width: 400px;
 
 }
 }
-.form{
-    padding: 20px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
+
 .characters{
     margin-left: 40px;
     list-style: none;

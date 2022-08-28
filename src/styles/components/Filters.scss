@@ -1,0 +1,27 @@
+
+.form{
+    font-family: 'Roboto', sans-serif;;
+    padding: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(34, 37, 58, 0.486);
+
+    &__wrapper{
+        display: flex;
+        gap: 10px;
+    }
+
+    &__label{
+       font-size: 20px;
+       font-weight: bold;
+       color: white;
+    }
+
+    &__input{
+        background-color: white;
+        font-size: 18px;
+    }
+}

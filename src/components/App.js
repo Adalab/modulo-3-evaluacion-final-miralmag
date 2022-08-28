@@ -43,7 +43,8 @@ function App() {
   .filter((character) => {
     return searchHouse === character.house;
   })
- 
+  
+  
 
   //Obtener id para ruta dinámica
   const {pathname} = useLocation();
