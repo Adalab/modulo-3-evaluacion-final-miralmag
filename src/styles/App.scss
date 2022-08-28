@@ -10,44 +10,5 @@ a{
     text-decoration: none;
 }
 
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-    &__logo{
-    padding-top: 30px;
-    width: 400px;
-
-}
-}
-
-.characters{
-    margin-left: 40px;
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-
-    &__item{
-      
-    }
-
-    &__img{
-        max-width: 160px;
-        max-height: 200px;
-    }
-
-    &__name{
-        color:rgba(46, 4, 71, 0.849);
-        margin-top: 10px;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    &__species{
-        color:rgba(46, 4, 71, 0.849);
-        margin-bottom: 20px;
-    }
-}
 

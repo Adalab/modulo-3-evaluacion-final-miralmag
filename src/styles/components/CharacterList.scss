@@ -1,0 +1,51 @@
+
+
+.characters{
+    margin: 40px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    &__item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__img-container{
+        background-color: rgba(255, 255, 255, 0.34);
+        width: 180px;
+        height: 230px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    &__img{
+        max-width: 160px;
+        max-height: 200px;
+    }
+
+    &__text{
+        color: white;
+        background-color: rgba(6, 6, 68, 0.453);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        border-radius: 5px;   
+        margin-bottom: 25px;
+    }
+
+    &__name{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__species{ 
+        padding-top: 10px;   
+     
+    }
+}

@@ -1,5 +1,6 @@
 
 import CharacterCard from './CharacterCard';
+import '../styles/components/CharacterList.scss';
 
 function CharacterList (props) {
     const htmlCharacters = props.filteredCharacters.map((character, index) => {

@@ -4,7 +4,7 @@ import { matchPath, Route, Routes, useLocation } from "react-router-dom";
 import getDataApi from '../services/hpApi';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
-import Logo from '../images/logo.png';
+import Header from './Header';
 import '../styles/App.scss';
 import CharacterDetails from './CharacterDetails';
 import localStorage from '../services/localStorage';
@@ -54,9 +54,7 @@ function App() {
 
   return (
     <div>
-      <header className='header'>
-      <img className='header__logo' alt='Harry Potter' src={Logo} />
-      </header>
+      <Header />
 
       <Routes>
         <Route
