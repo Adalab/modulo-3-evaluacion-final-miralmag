@@ -1,6 +1,6 @@
 
-
 .characters{
+    font-family: 'Roboto', sans-serif;
     margin: 40px;
     list-style: none;
     display: grid;
@@ -14,7 +14,7 @@
     }
 
     &__img-container{
-        background-color: rgba(255, 255, 255, 0.34);
+        background-color: rgba(255, 255, 255, 0.676);
         width: 180px;
         height: 230px;
         border-radius: 5px;
@@ -47,5 +47,11 @@
     &__species{ 
         padding-top: 10px;   
      
+    }
+
+    &__error{
+        font-size: 20px;
+        color: white;
+        text-align: center;
     }
 }

@@ -18,7 +18,7 @@ function CharacterList (props) {
         <ul className="characters">
             {htmlCharacters}
         </ul>
-        <p>{getErrorMsg()}</p>
+        <p className='characters__error'>{getErrorMsg()}</p>
         </>
     );
 };

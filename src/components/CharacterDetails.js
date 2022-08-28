@@ -38,7 +38,7 @@ function CharacterDetails (props) {
             <ul className='details__list'>
                 <li className='details__item'>
                     <img className='details__photo' alt={`Foto de ${props.character.name}`} title={props.character.name} src={props.character.image || defaultImg} />
-                    <h3>{props.character.name}</h3>
+                    <h3 className='details__name'>{props.character.name}</h3>
                     <p className='details__data'>Estatus: {isAlive()}</p>
                     <p className='details__data'>Especie: {getSpecies()}</p>
                     <p className='details__data'>Género: {getGender()}</p>
@@ -46,7 +46,7 @@ function CharacterDetails (props) {
                 </li>
             </ul>
         </div>
-    <Link to='/'><i class="fa-solid fa-hand-point-left"> Volver</i></Link>
+    <Link to='/'><i className="details__back fa-solid fa-hand-point-left"> Volver</i></Link>
     </>
     )
 };
