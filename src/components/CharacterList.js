@@ -2,8 +2,8 @@
 import CharacterCard from './CharacterCard';
 
 function CharacterList (props) {
-    const htmlCharacters = props.filteredCharacters.map((character) => {
-        return <CharacterCard character={character}/>
+    const htmlCharacters = props.filteredCharacters.map((character, index) => {
+        return <CharacterCard key={index} character={character}/>
 
     })
 
