@@ -1,5 +1,11 @@
+@import 'core/reset';
+
 body{
 background-color: rgba(221, 190, 239, 0.849);
+}
+
+a{
+    text-decoration: none;
 }
 
 .header{
@@ -27,20 +33,33 @@ background-color: rgba(221, 190, 239, 0.849);
     padding: 20px;
     display: flex;
     gap: 10px;
+    justify-content: center;
 }
 .characters{
+    margin-left: 40px;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
     &__item{
-       
-
+      
     }
 
     &__img{
         max-width: 160px;
         max-height: 200px;
+    }
+
+    &__name{
+        color:rgba(46, 4, 71, 0.849);
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    &__species{
+        color:rgba(46, 4, 71, 0.849);
+        margin-bottom: 20px;
     }
 }
 

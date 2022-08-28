@@ -7,10 +7,10 @@ function Filters (props) {
     }
     const handleFilterName = (ev) => {
         props.handleFilterName(ev.target.value);
+      
     }
 
     const handleFilterHouse = (ev) => {
-      
         props.handleFilterHouse(ev.target.value);
     }
 

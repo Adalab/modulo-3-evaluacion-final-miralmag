@@ -7,18 +7,20 @@ import Filters from './Filters';
 import Logo from '../images/logo.png';
 import '../styles/App.scss';
 import CharacterDetails from './CharacterDetails';
+import localStorage from '../services/localStorage';
 
 function App() {
 
   //Variables estado
-  const [characters, setCharacters] = useState([])
-  const [searchName, setSearchName] = useState('');
+  const [characters, setCharacters] = useState(localStorage.get('characters', []))
+  const [searchName, setSearchName] = useState (localStorage.get('search', ''));
   const [searchHouse, setSearchHouse] = useState('Gryffindor');
 
   //Servicios
   useEffect(() => {
     getDataApi().then((data) => {
       setCharacters(data);
+      localStorage.set('characters', data);
       console.log(characters);
     });
   }, []);
@@ -26,6 +28,7 @@ function App() {
   //Funciones de eventos
   const handleFilterName = (inputName) => {
     setSearchName(inputName);
+    localStorage.set('search', inputName);
   }
 
   const handleFilterHouse = (inputHouse) => {
@@ -40,6 +43,7 @@ function App() {
   .filter((character) => {
     return searchHouse === character.house;
   })
+ 
 
   //Obtener id para ruta dinámica
   const {pathname} = useLocation();
