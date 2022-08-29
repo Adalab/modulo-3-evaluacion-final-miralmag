@@ -25,6 +25,18 @@ function App() {
     });
   }, []);
 
+  //Ordenar alfabéticamente
+  const sortedCharacters = characters.sort(function (a, b) {
+    if (a.name > b.name) {
+      return 1;
+    }
+    if (a.name < b.name) {
+      return -1;
+    }
+    return 0;
+  });
+  
+
   //Funciones de eventos
   const handleFilterName = (inputName) => {
     setSearchName(inputName);

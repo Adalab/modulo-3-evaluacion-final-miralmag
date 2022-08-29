@@ -1,6 +1,4 @@
 /* eslint-disable default-case */
-
-import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import defaultImg from '../images/harry-placeholder.jpg';
 import '../styles/components/Details.scss';
@@ -19,7 +17,6 @@ function CharacterDetails (props) {
         house = '--huff';
        }
       
-    
     
     const isAlive = () => {
         if (props.character.alive && props.character.gender === 'female') {
@@ -74,6 +71,7 @@ function CharacterDetails (props) {
             return 'Medio humano';
         }
     }
+    
     return(
         <>
         <div className='details'>
@@ -89,7 +87,7 @@ function CharacterDetails (props) {
                     <p>Género: {getGender()}</p>
                     <p>Casa: {props.character.house || 'N/A'}</p>
                     </div>
-                        <div className={`details__badge${house}`}></div>
+                        <div className={`details__crest${house}`}></div>
                     </div>
                 </li>
             </ul>
