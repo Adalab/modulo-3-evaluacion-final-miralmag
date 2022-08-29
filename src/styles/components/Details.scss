@@ -52,6 +52,42 @@
         background-position: center;
         background-size: cover;
         border-radius: 50%;
+
+        &--gry{
+        background-image: url(../../images/gry.jpg);
+        width: 90px;
+        height: 90px;
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        }
+
+        &--huff{
+            background-image: url(../../images/huff.png);
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-size: cover;
+            border-radius: 50%;
+            }
+
+        &--raven{
+            background-image: url(../../images/raven.jpg);
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-size: cover;
+            border-radius: 50%;
+            }
+        
+        &--sly{
+            background-image: url(../../images/sly.jpg);
+            width: 90px;
+            height: 90px;
+            background-position: center;
+            background-size: cover;
+            border-radius: 50%;
+            }
     }
 
 

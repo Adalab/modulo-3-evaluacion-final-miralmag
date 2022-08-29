@@ -15,13 +15,13 @@ function App() {
   const [characters, setCharacters] = useState(localStorage.get('characters', []))
   const [searchName, setSearchName] = useState (localStorage.get('search', ''));
   const [searchHouse, setSearchHouse] = useState('Gryffindor');
+  const [searchGender, setSearchGender] = useState('all');
 
   //Servicios
   useEffect(() => {
     getDataApi().then((data) => {
       setCharacters(data);
       localStorage.set('characters', data);
-      console.log(characters);
     });
   }, []);
 
@@ -35,6 +35,10 @@ function App() {
     setSearchHouse(inputHouse);
   }
 
+  const handleFilterGender = (inputGender) => {
+    setSearchGender(inputGender);
+  }
+
   //Filtrado
   const filteredCharacters = characters
   .filter((character) => {
@@ -46,6 +50,12 @@ function App() {
         return searchHouse === character.house
       }
   })
+  .filter((character) => {
+    if (searchGender === 'all') 
+      {return true} else {
+        return searchGender === character.gender
+      }
+    })
 
   const handleClickReset = () => {
      setSearchName('');
@@ -72,7 +82,8 @@ function App() {
           searchName={searchName} 
           handleFilterHouse={handleFilterHouse} 
           searchHouse={searchHouse}
-          handleClick={handleClickReset} />
+          handleClick={handleClickReset}
+          handleFilterGender={handleFilterGender} />
 
           <CharacterList 
           filteredCharacters={filteredCharacters} />

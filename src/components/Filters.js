@@ -14,6 +14,10 @@ function Filters (props) {
         props.handleFilterHouse(ev.target.value);
     }
 
+    const handleFilterGender = (ev) => {
+        props.handleFilterGender(ev.target.value);
+    }
+
     const handleClick = (ev) => {
         ev.preventDefault();
         props.handleClick();
@@ -22,26 +26,43 @@ function Filters (props) {
     return (
         <>
         <form className="form" onSubmit={handleForm}>
+            
             <section className='form__wrapper'>
-        <label className="form__label" htmlFor="name">Busca por nombre:</label>
-        <input className="form__input" type="text" name="name" id="name" value={props.searchName} onChange={handleFilterName}></input>
-        </section>
-        <section className='form__wrapper'>
-        <label className="form__label" htmlFor= "house">Busca por casa:</label>
-            <select
-                className= "form__input"
-                name=" house" 
-                id="house"
-                value={props.searchHouse}
-                onChange={handleFilterHouse}>
         
-                    <option value= "Gryffindor" selected>Gryffindor</option>
-                    <option value="Hufflepuff">Hufflepuff</option>
-                    <option value="Ravenclaw">Ravenclaw</option>
-                    <option value="Slytherin">Slytherin</option>
-                    <option value="all">Todos</option>
-            </select>
-           
+                <label className="form__label" htmlFor="name">Busca por nombre:</label>
+                <input className="form__input" type="text" name="name" id="name" value={props.searchName} onChange={handleFilterName}></input>
+                </section>
+        
+            <section className='form__wrapper'>
+                <label className="form__label" htmlFor= "house">Busca por casa:</label>
+                <select
+                    className= "form__input"
+                    name=" house" 
+                    id="house"
+                    value={props.searchHouse}
+                    onChange={handleFilterHouse}>
+            
+                        <option value= "Gryffindor" selected>Gryffindor</option>
+                        <option value="Hufflepuff">Hufflepuff</option>
+                        <option value="Ravenclaw">Ravenclaw</option>
+                        <option value="Slytherin">Slytherin</option>
+                        <option value="all">Todos</option>
+                </select>
+            </section>
+            <section className='form__wrapper'>
+                <label className="form__label" htmlFor= "house">Busca por género:</label>
+                <select
+                    className= "form__input"
+                    name=" gender" 
+                    id="gender"
+                    value={props.searchGender}
+                    onChange={handleFilterGender}>
+            
+                        <option value= "all" selected>Todos</option>
+                        <option value="female">Femenino</option>
+                        <option value="male">Masculino</option>
+                        
+                </select>
             </section>
             <button className='form__button' onClick={handleClick}>Borrar</button>
         </form>

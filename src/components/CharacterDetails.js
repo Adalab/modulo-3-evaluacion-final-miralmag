@@ -1,4 +1,5 @@
 /* eslint-disable default-case */
+
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import defaultImg from '../images/harry-placeholder.jpg';
@@ -6,7 +7,21 @@ import '../styles/components/Details.scss';
 
 function CharacterDetails (props) {
     
-      const isAlive = () => {
+    //Variables para el html
+   let house = '';
+    if (props.character.house === 'Gryffindor') {
+        house = '--gry';
+       } else if (props.character.house === 'Slytherin') {
+        house = '--sly';
+       } else if (props.character.house === 'Ravenclaw') {
+        house = '--raven';
+       } else if (props.character.house === 'Hufflepuff') {
+        house = '--huff';
+       }
+      
+    
+    
+    const isAlive = () => {
         if (props.character.alive && props.character.gender === 'female') {
             return 'Viva';
         } else if (props.character.alive && props.character.gender === 'male') {
@@ -69,12 +84,12 @@ function CharacterDetails (props) {
                     <h4 className='details__altname'>{props.character.altName || null}</h4>
                     <div className='details__wrapper'>
                         <div className='details__data'>
-                    <p>Estatus: {isAlive()}</p>
+                    <p>Estado: {isAlive()}</p>
                     <p>Especie: {getSpecies()}</p>
                     <p>Género: {getGender()}</p>
                     <p>Casa: {props.character.house || 'N/A'}</p>
                     </div>
-                        <div className='details__badge'></div>
+                        <div className={`details__badge${house}`}></div>
                     </div>
                 </li>
             </ul>
