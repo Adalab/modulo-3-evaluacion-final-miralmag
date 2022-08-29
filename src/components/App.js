@@ -47,9 +47,10 @@ function App() {
       }
   })
 
-  const handleClickSort = () => {
-    
-  }
+  const handleClickReset = () => {
+     setSearchName('');
+     setSearchHouse('Gryffindor');
+}
 
   //Obtener id para ruta dinámica
   const {pathname} = useLocation();
@@ -71,7 +72,7 @@ function App() {
           searchName={searchName} 
           handleFilterHouse={handleFilterHouse} 
           searchHouse={searchHouse}
-          handleClick={handleClickSort} />
+          handleClick={handleClickReset} />
 
           <CharacterList 
           filteredCharacters={filteredCharacters} />

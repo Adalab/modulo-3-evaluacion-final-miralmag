@@ -43,7 +43,7 @@ function Filters (props) {
             </select>
            
             </section>
-            <button className='form__button' onClick={handleClick}>Ordenar</button>
+            <button className='form__button' onClick={handleClick}>Borrar</button>
         </form>
        
         </>
