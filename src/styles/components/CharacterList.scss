@@ -4,7 +4,15 @@
     margin: 40px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media all and (min-width: 768px){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    @media all and (min-width: 1200px){
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 
     &__item{
       display: flex;

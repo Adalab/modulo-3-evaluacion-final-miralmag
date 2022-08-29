@@ -41,10 +41,15 @@ function App() {
     return character.name.toLowerCase().includes(searchName.toLowerCase())
   })
   .filter((character) => {
-    return searchHouse === character.house;
+    if (searchHouse === 'all') 
+      {return true} else {
+        return searchHouse === character.house
+      }
   })
-  
-  
+
+  const handleClickSort = () => {
+    
+  }
 
   //Obtener id para ruta dinámica
   const {pathname} = useLocation();
@@ -65,7 +70,8 @@ function App() {
           handleFilterName={handleFilterName} 
           searchName={searchName} 
           handleFilterHouse={handleFilterHouse} 
-          searchHouse={searchHouse} />
+          searchHouse={searchHouse}
+          handleClick={handleClickSort} />
 
           <CharacterList 
           filteredCharacters={filteredCharacters} />

@@ -14,7 +14,13 @@ function Filters (props) {
         props.handleFilterHouse(ev.target.value);
     }
 
+    const handleClick = (ev) => {
+        ev.preventDefault();
+        props.handleClick();
+    }
+
     return (
+        <>
         <form className="form" onSubmit={handleForm}>
             <section className='form__wrapper'>
         <label className="form__label" htmlFor="name">Busca por nombre:</label>
@@ -33,9 +39,14 @@ function Filters (props) {
                     <option value="Hufflepuff">Hufflepuff</option>
                     <option value="Ravenclaw">Ravenclaw</option>
                     <option value="Slytherin">Slytherin</option>
+                    <option value="all">Todos</option>
             </select>
+           
             </section>
+            <button className='form__button' onClick={handleClick}>Ordenar</button>
         </form>
+       
+        </>
     );
 };
 
