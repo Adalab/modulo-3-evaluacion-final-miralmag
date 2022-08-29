@@ -12,10 +12,15 @@ const set = (key, value) => {
     localStorage.setItem(key, localStorageData);
 };
 
+const clear = () => {
+    localStorage.clear();
+  };
+
 
 const objectToExport = {
     get: get,
     set: set,
+    clear: clear,
 };
 
 

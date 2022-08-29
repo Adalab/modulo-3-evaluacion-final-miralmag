@@ -29,7 +29,6 @@ function App() {
       //Ordenar alfabéticamente
 
   // const handleSort = () => {
-    //Ordenar alfabéticamente
         characters.sort(function (a, b) {
             if (a.name > b.name) {
                 return 1;
@@ -77,6 +76,7 @@ function App() {
   const handleClickReset = () => {
      setSearchName('');
      setSearchHouse('Gryffindor');
+     localStorage.clear('search', '');
 }
 
   //Obtener id para ruta dinámica

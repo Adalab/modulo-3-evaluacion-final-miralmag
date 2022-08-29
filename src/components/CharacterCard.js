@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../styles/components/CharacterList.scss';
-import defaultImg from '../images/harry-placeholder.jpg';
+import defaultImg from '../images/harry-placeholder.png';
 
 function CharacterCard (props) {
 

@@ -1,6 +1,6 @@
 /* eslint-disable default-case */
 import {Link} from 'react-router-dom';
-import defaultImg from '../images/harry-placeholder.jpg';
+import defaultImg from '../images/harry-placeholder.png';
 import '../styles/components/Details.scss';
 
 function CharacterDetails (props) {
