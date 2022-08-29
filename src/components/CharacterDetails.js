@@ -5,7 +5,7 @@ import '../styles/components/Details.scss';
 
 function CharacterDetails (props) {
     
-    //Variables para el html
+    //Variables para obtener la className
    let house = '';
     if (props.character.house === 'Gryffindor') {
         house = '--gry';

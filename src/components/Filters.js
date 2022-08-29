@@ -1,4 +1,5 @@
 import '../styles/components/Filters.scss';
+import PropTypes, { func, string } from 'prop-types';
 
 function Filters (props) {
 
@@ -34,7 +35,7 @@ function Filters (props) {
             <section className='form__wrapper'>
 
                 <label className="form__label" htmlFor="name">Busca por nombre:</label>
-                <input className="form__input" type="text" name="name" id="name" value={props.searchName} onChange={handleFilterName}></input>
+                <input className="form__input" type="text" name="name" id="name" placeholder='P. ej., Harry Potter' value={props.searchName} onChange={handleFilterName}></input>
                 </section>
 
             <section className='form__wrapper'>
@@ -75,5 +76,15 @@ function Filters (props) {
         </>
     );
 };
+
+Filters.propTypes = {
+    handleFilterName: func,
+    handleFilterHouse: func,
+    handleClick: func,
+    handleFilterGender: func,
+    searchName: string,
+    searchGender: string,
+    searchHouse: string,
+}
 
 export default Filters;
