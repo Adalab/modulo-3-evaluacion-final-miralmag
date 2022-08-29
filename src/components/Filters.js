@@ -7,7 +7,6 @@ function Filters (props) {
     }
     const handleFilterName = (ev) => {
         props.handleFilterName(ev.target.value);
-      
     }
 
     const handleFilterHouse = (ev) => {
@@ -23,25 +22,30 @@ function Filters (props) {
         props.handleClick();
     }
 
+    // const handleSort = (ev) => {
+    //     ev.preventDefault();
+    //     props.handleSort();
+    // }
+
     return (
         <>
         <form className="form" onSubmit={handleForm}>
-            
+
             <section className='form__wrapper'>
-        
+
                 <label className="form__label" htmlFor="name">Busca por nombre:</label>
                 <input className="form__input" type="text" name="name" id="name" value={props.searchName} onChange={handleFilterName}></input>
                 </section>
-        
+
             <section className='form__wrapper'>
                 <label className="form__label" htmlFor= "house">Busca por casa:</label>
                 <select
                     className= "form__input"
-                    name=" house" 
+                    name=" house"
                     id="house"
                     value={props.searchHouse}
                     onChange={handleFilterHouse}>
-            
+
                         <option value= "Gryffindor" selected>Gryffindor</option>
                         <option value="Hufflepuff">Hufflepuff</option>
                         <option value="Ravenclaw">Ravenclaw</option>
@@ -53,20 +57,21 @@ function Filters (props) {
                 <label className="form__label" htmlFor= "house">Busca por género:</label>
                 <select
                     className= "form__input"
-                    name=" gender" 
+                    name=" gender"
                     id="gender"
                     value={props.searchGender}
                     onChange={handleFilterGender}>
-            
+
                         <option value= "all" selected>Todos</option>
                         <option value="female">Femenino</option>
                         <option value="male">Masculino</option>
-                        
+
                 </select>
             </section>
             <button className='form__button' onClick={handleClick}>Borrar</button>
+            {/* <button className='form__button' onClick={handleSort}>Ordenar</button> */}
         </form>
-       
+
         </>
     );
 };
