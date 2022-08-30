@@ -4,9 +4,9 @@ import getDataApi from '../services/hpApi';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import Header from './Header';
-import '../styles/App.scss';
 import CharacterDetails from './CharacterDetails';
 import localStorage from '../services/localStorage';
+import '../styles/App.scss';
 
 function App() {
 
@@ -64,7 +64,7 @@ function App() {
       }
       return 0;
       });
-      
+
 
   const handleClickReset = () => {
      setSearchName('');
@@ -73,15 +73,14 @@ function App() {
 }
 
   //Obtener id para ruta dinámica
-
   const {pathname} = useLocation();
   const dataPath = matchPath('/character/:id', pathname);
-  const getRouteDetail = () => {
+  
+  // const getRouteDetail = () => {
     const characterId = dataPath !== null ? dataPath.params.id : null;
     const characterFound = characters.find(character => {return character.id === (characterId)});
-    if (characterFound) {return characterFound
-    } else {return {}}
-  }
+  //   return (characterFound || {})
+  // }
 
   return (
     <div>
@@ -110,7 +109,7 @@ function App() {
         <Route
         path='/character/:id'
         element={
-          <CharacterDetails character={getRouteDetail()} />
+          <CharacterDetails character={characterFound || {}} />
         }
         />
       </Routes>
