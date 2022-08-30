@@ -23,11 +23,6 @@ function Filters (props) {
         props.handleClick();
     }
 
-    // const handleSort = (ev) => {
-    //     ev.preventDefault();
-    //     props.handleSort();
-    // }
-
     return (
         <>
         <form className="form" onSubmit={handleForm}>
@@ -70,7 +65,6 @@ function Filters (props) {
                 </select>
             </section>
             <button className='form__button' onClick={handleClick}>Borrar</button>
-            {/* <button className='form__button' onClick={handleSort}>Ordenar</button> */}
         </form>
 
         </>

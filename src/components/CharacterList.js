@@ -1,3 +1,4 @@
+import PropTypes, { array } from 'prop-types';
 
 import CharacterCard from './CharacterCard';
 import '../styles/components/CharacterList.scss';
@@ -23,5 +24,8 @@ function CharacterList (props) {
     );
 };
 
+CharacterList.propTypes = {
+    filteredCharacters: array,
+}
 
 export default CharacterList;

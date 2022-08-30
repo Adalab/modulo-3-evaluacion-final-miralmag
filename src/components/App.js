@@ -75,13 +75,9 @@ function App() {
   //Obtener id para ruta dinámica
   const {pathname} = useLocation();
   const dataPath = matchPath('/character/:id', pathname);
-  
-  // const getRouteDetail = () => {
-    const characterId = dataPath !== null ? dataPath.params.id : null;
-    const characterFound = characters.find(character => {return character.id === (characterId)});
-  //   return (characterFound || {})
-  // }
-
+  const characterId = dataPath !== null ? dataPath.params.id : null;
+  const characterFound = characters.find(character => {return character.id === (characterId)});
+ 
   return (
     <div>
       <Header />
@@ -97,8 +93,7 @@ function App() {
           handleFilterHouse={handleFilterHouse} 
           searchHouse={searchHouse}
           handleClick={handleClickReset}
-          handleFilterGender={handleFilterGender}
-          // handleSort={handleSort} 
+          handleFilterGender={handleFilterGender} 
           />
 
           <CharacterList 

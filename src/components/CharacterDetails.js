@@ -1,6 +1,7 @@
 /* eslint-disable default-case */
 import {Link} from 'react-router-dom';
 import defaultImg from '../images/harry-placeholder.png';
+import PropTypes, { object } from 'prop-types';
 import '../styles/components/Details.scss';
 
 function CharacterDetails (props) {
@@ -96,5 +97,9 @@ function CharacterDetails (props) {
     </>
     )
 };
+
+CharacterDetails.propTypes = {
+    character: object,
+}
 
 export default CharacterDetails;
