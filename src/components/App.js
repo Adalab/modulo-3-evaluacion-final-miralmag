@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { matchPath, Route, Routes, useLocation } from "react-router-dom";
 import getDataApi from '../services/hpApi';
@@ -24,22 +23,6 @@ function App() {
       localStorage.set('characters', data);
     });
   }, []);
-
-
-      //Ordenar alfabéticamente
-
-  // const handleSort = () => {
-        characters.sort(function (a, b) {
-            if (a.name > b.name) {
-                return 1;
-            }
-            if (a.name < b.name) {
-                return -1;
-            }
-            return 0;
-            });
-        // }
-    
 
   //Funciones de eventos
   const handleFilterName = (inputName) => {
@@ -72,6 +55,16 @@ function App() {
         return searchGender === character.gender
       }
     })
+  .sort(function (a, b) {
+      if (a.name > b.name) {
+          return 1;
+      }
+      if (a.name < b.name) {
+          return -1;
+      }
+      return 0;
+      });
+      
 
   const handleClickReset = () => {
      setSearchName('');
@@ -80,10 +73,15 @@ function App() {
 }
 
   //Obtener id para ruta dinámica
+
   const {pathname} = useLocation();
   const dataPath = matchPath('/character/:id', pathname);
-  const characterId = dataPath !== null ? dataPath.params.id : null;
-  const characterFound = characters.find(character => {return character.id === characterId});
+  const getRouteDetail = () => {
+    const characterId = dataPath !== null ? dataPath.params.id : null;
+    const characterFound = characters.find(character => {return character.id === (characterId)});
+    if (characterFound) {return characterFound
+    } else {return {}}
+  }
 
   return (
     <div>
@@ -112,7 +110,7 @@ function App() {
         <Route
         path='/character/:id'
         element={
-          <CharacterDetails character={characterFound} />
+          <CharacterDetails character={getRouteDetail()} />
         }
         />
       </Routes>

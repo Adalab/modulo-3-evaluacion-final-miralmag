@@ -20,13 +20,13 @@ function CharacterDetails (props) {
     
     const isAlive = () => {
         if (props.character.alive && props.character.gender === 'female') {
-            return 'Viva';
+            return ('Viva ♥')
         } else if (props.character.alive && props.character.gender === 'male') {
-            return 'Vivo';
+            return 'Vivo ♥';
         } else if (props.character.alive === false && props.character.gender === 'male') {
-            return 'Muerto';
+            return 'Muerto ☠';
         } else if (props.character.alive === false && props.character.gender === 'female') {
-            return 'Muerta';
+            return 'Muerta ☠';
     }
 }
     const getGender = () => {
@@ -92,7 +92,7 @@ function CharacterDetails (props) {
                 </li>
             </ul>
         </div>
-    <Link to='/'><i className="details__back fa-solid fa-hand-point-left"> Volver</i></Link>
+    <Link to='/'><i className="details__back fa-solid fa-hand-point-left"></i></Link>
     </>
     )
 };
