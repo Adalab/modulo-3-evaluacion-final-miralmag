@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 function getDataApi() {
     return fetch(
-        'http://hp-api.herokuapp.com/api/characters'
+        'https://hp-api.herokuapp.com/api/characters'
     )
         .then((response) => response.json())
         .then((data) => {
